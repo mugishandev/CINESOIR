@@ -1,4 +1,8 @@
 <h1><%= @list.name %></h1>
+<%= simple_form_for [@list, @marker] do |f| %>
+  <%= f.association :movie %>
+  <%= f.submit %>
+<% end %>
 <ul>
  <%= @list.movies.each do |movie| %>
   <li>
@@ -9,4 +13,5 @@
     </li>
  <% end %>
 </ul>
+<%= button_to "Destroy this list", @list, method: :delete %>
 <%= link_to "Back to lists", lists_path %>

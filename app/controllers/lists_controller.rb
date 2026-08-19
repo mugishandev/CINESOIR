@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @marker = Marker.new
   end
 
   def new
