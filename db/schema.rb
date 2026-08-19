@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_18_102537) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_19_083540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,6 +20,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_102537) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "markers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "list_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_markers_on_list_id"
+    t.index ["movie_id"], name: "index_markers_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -46,4 +55,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_18_102537) do
   end
 
   add_foreign_key "lists", "users"
+  add_foreign_key "markers", "lists"
+  add_foreign_key "markers", "movies"
 end
