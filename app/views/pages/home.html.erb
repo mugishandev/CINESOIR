@@ -11,7 +11,7 @@
 </nav>
 
 <div class="container-fluid">
-  <p class="text-center">
+  <p class="text-center p-3">
     Voici notre landing page, impressionnante n'est-ce pas ?
   </p>
 
@@ -47,7 +47,7 @@
     </div>
 
     <div class="col-3 text-center  border border-light rounded p-3">
-      <h3>Mes listes</h3>
+      <h3><%= link_to "Mes listes", lists_path %></h3>
       <div>
         <% @lists.each do |list| %>
           <p>
