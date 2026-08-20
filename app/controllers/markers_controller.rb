@@ -33,3 +33,8 @@ class MarkersController < ApplicationController
   end
 
 end
+
+ def new
+    @list = List.find(params[:list_id])
+    @marker = Marker.new
+ end
