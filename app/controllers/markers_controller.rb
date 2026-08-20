@@ -34,5 +34,4 @@ class MarkersController < ApplicationController
   def marker_params
     params.require(:marker).permit(:movie_id, :list_id)
   end
-
 end

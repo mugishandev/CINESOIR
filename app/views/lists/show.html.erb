@@ -1,6 +1,7 @@
 <h1><%= @list.name %></h1>
 <%= simple_form_for [@list, @marker] do |f| %>
   <%= f.association :movie %>
+  <%= f.error :movie_id %>
   <%= f.submit %>
 <% end %>
 <ul>
