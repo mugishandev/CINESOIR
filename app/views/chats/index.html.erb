@@ -1,0 +1,8 @@
+<h1>Your chats!</h1>
+<% @chats.each do |chat| %>
+ <li>
+    <%= link_to chat.name, chat_path(chat) %>
+ </li>
+<% end %>
+<%= link_to "Create new chat", new_chat_path %>
+<p><%= link_to "Return to landing page", root_path %></p>
