@@ -24,16 +24,16 @@
   <div class="row p-3">
 
     <div class="col-3 text-center  border border-light rounded p-3">
-      <h3><%= link_to "Mes Chats", chats_path %></h3>
+      <h3>Mes Chats</h3>
         <% if @chats.any? %>
-        <ul>
           <% @chats.each do |chat| %>
-            <!-- <li><%#= link_to chat.title, chat_path(chat) %></li> -->
+            <div>
+            <%= link_to chat.id, chat_path(chat) %>
+            </div>
           <% end %>
-        </ul>
-      <% else %>
-        There are no chats yet.
-      <% end %>
+        <% else %>
+          There are no chats yet.
+        <% end %>
     </div><!-- <h3>Mes Chats</h3> -->
 
 
@@ -48,7 +48,7 @@
     </div>
 
     <div class="col-3 text-center  border border-light rounded p-3">
-      <h3><%= link_to "Mes listes", lists_path %></h3>
+      <h3>Mes listes</h3>
       <div>
         <% @lists.each do |list| %>
           <p>
