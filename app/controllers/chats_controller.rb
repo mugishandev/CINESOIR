@@ -19,11 +19,11 @@ class ChatsController < ApplicationController
     @chat.title = @content.truncate(30)
 
     if @chat.save
-    @message = @chat.messages.create!(role: "user", content: @content)
+    @message = @chat.messages.create!(role: "Mugishan", content: @content)
 
       ruby_llm_chat = RubyLLM.chat
       response = ruby_llm_chat.with_instructions(SYSTEM_PROMPT).ask(@message.content)
-      Message.create(role: "assistant", content: response.content, chat: @chat)
+      Message.create(role: "Assistant", content: response.content, chat: @chat)
 
       redirect_to chat_path(@chat)
     else
