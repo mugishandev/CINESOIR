@@ -23,9 +23,9 @@
       <h3>Chatbot</h3>
       <%#= simple_form_for [@chat, @message] do |f| %>
       <%= simple_form_for @message, url: chats_path do |f| %>
-          <label for="message" class="form-label">Voici la réponse du chatbot, passionnant n'est-il pas ?</label>
+          <label for="message" class="form-label"></label>
           <%= f.input :content,
-          label: "Posez votre question...?" %>
+          label: "Que voulez vous voir ce soir?" %>
           <%= f.submit "envoyer", class: "btn btn primary" %>
       <% end %>
     </div>
@@ -38,11 +38,7 @@
             <%= link_to list.name, list_path(list) %>
           </p>
         <% end %>
-<<<<<<< HEAD
-          <%= link_to "Create new list", new_list_path %>
-=======
         <%= button_to "Nouvelle liste", new_list_path, method: :get, class: "btn btn-success text-white fw-bold" %>
->>>>>>> 501c6aaac94713f6bfa76d84b5b900e8e7bf25cb
       </div>
     </div>
   </div>
