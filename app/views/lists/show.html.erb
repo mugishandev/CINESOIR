@@ -16,13 +16,13 @@
   <div>
     <ul class="movie-grid">
       <% @list.movies.each do |movie| %>
-        <li class="movie-card mt-2">
-          <p><%= image_tag(movie.poster_url) %></p>
+        <li class="movie-card mt-2"
+        style="background-image: url('<%= movie.poster_url %>');">
           <div class="movie-info">
             <h2><%= movie.title %></h2>
             <div class="movie-details">
             <p><%= movie.genre %></p>
-            <p><%= movie.year %></p>
+            <h3><%= movie.year %></h3>
             </div>
           </div>
           <div class="movie-synopsis">
@@ -34,6 +34,6 @@
   </div>
   <div class="d-flex justify-content-between">
     <%= button_to "Détruire la liste", @list, method: :delete, class: "btn btn-danger fw-bold text-white" %>
-    <%= button_to "Retour aux listes", lists_path, method: :get, class: "btn btn-primary fw-bold" %>
+    <%= button_to "ACCUEIL", root_path, method: :get, class: "btn btn-primary fw-bold" %>
   </div>
 </div>

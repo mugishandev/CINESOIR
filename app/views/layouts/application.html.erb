@@ -23,6 +23,33 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-leg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="col-4">
+          <span class="navbar-text">
+          <%= link_to "accueil", root_path, class: "navbar-text" %>
+          </span>
+        </div>
+
+        <div class="col-4 text-center">
+          <span class="navbar-text fw-bold navbar-logo">
+          CINESOIR
+          </span>
+        </div>
+
+        <div class="ms-auto">
+          <span class="navbar-text">
+            username
+          </span>
+            <%# if user_signed_in? %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Voulez-vous vraiment vous déconnecter ?" } %>
+            <%# else %>
+              <%#= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+              <%#= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %>
+            <%# end %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
