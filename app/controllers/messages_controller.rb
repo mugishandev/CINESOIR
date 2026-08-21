@@ -7,12 +7,12 @@ class MessagesController < ApplicationController
 
     @message = Message.new(message_params)
     @message.chat = @chat
-    @message.role = "user"
+    @message.role = "Mugishan"
 
     if @message.save
       ruby_llm_chat = RubyLLM.chat
       response = ruby_llm_chat.with_instructions(SYSTEM_PROMPT).ask(@message.content)
-      Message.create(role: "assistant", content: response.content, chat: @chat)
+      Message.create(role: "Assistant", content: response.content, chat: @chat)
 
       redirect_to chat_path(@chat)
     else

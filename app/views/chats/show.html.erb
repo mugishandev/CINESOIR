@@ -1,20 +1,30 @@
 <!-- <h1>Voici un chatbot, il est passionnant.</h1> -->
 <!-- <h1 id="chat_title"><%#= @chat.title %></h1> -->
 
-<% @chat.messages.each do |message| %>
-  <p>
-    <strong><%= message.role %></strong>
-    <%= simple_format(message.content) %>
-  </p>
-<% end %>
+<div class="container min-vh-100 mt-3 position-relative">
+  <div class="position-sticky top-0 d-flex justify-content-end">
+        <%= button_to "Supprimer la conversation", @chat, method: :delete, class: "btn btn-danger text-white fw-bold z-3" %>
+  </div>
+    <% @chat.messages.each do |message| %>
+      <p>
+        <strong><%= message.role %></strong>
+        <%= simple_format(message.content) %>
+      </p>
+    <% end %>
 
-<div id="new_message_container">
-  <%= simple_form_for [@chat, @message] do |f| %>
-    <%= f.input :content, label: "Ask a question", required: true, placeholder: "Que voulez vous voir ce soir?" %>
-    <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
-    <%= link_to "Back to home", root_path %>
-  <% end %>
+    <%= simple_form_for [@chat, @message] do |f| %>
+      <div id="new_message_container" class="d-flex align-items-center gap-3">
 
-  <%= button_to "Destroy this Chat", @chat, method: :delete %>
+        <%= f.input :content, label: "",
+        required: true,
+        placeholder: "Demandez moi quelque chose.",
+        wrapper_html: {class: "flex-grow-1"} %>
+
+        <%= f.button :submit,
+        'Envoyer',
+        class: "btn btn-success rounded-2 text-white fw-bold h-100" %>
+
+      </div>
+    <% end %>
 
 </div>
