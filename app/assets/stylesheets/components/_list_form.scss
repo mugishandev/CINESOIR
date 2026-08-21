@@ -1,0 +1,11 @@
+.list-form {
+  justify-content: center;
+  align-items: center;
+}
+
+.list-form-content {
+  display: flex;
+  flex-direction: row;
+  flex: grow;
+  gap: 2;
+}
