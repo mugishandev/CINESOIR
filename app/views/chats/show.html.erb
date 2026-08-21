@@ -12,5 +12,9 @@
   <%= simple_form_for [@chat, @message] do |f| %>
     <%= f.input :content, label: "Ask a question", required: true, placeholder: "Que voulez vous voir ce soir?" %>
     <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
+    <%= link_to "Back to home", root_path %>
   <% end %>
+
+  <%= button_to "Destroy this Chat", @chat, method: :delete %>
+
 </div>

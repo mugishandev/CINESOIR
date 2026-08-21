@@ -28,7 +28,7 @@
         <% if @chats.any? %>
           <% @chats.each do |chat| %>
             <div>
-            <%= link_to chat.id, chat_path(chat) %>
+            <%= link_to chat.title, chat_path(chat) %>
             </div>
           <% end %>
         <% else %>
@@ -56,6 +56,7 @@
             <%= link_to list.name, list_path(list) %>
           </p>
         <% end %>
+          <%= link_to "Create new list", new_list_path %>
       </div>
     </div>
   </div>
