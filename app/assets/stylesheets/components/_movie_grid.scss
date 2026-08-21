@@ -6,6 +6,14 @@
   list-style: none;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    .movie-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .movie-grid {
+      grid-template-columns: 1fr;
+    }
   }
 }

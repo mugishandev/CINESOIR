@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     resources :chats, only: [ :create ]
   end
 
-  resources :chats, only: [ :index, :show, :new, :create ] do
-    resources :messages, only: [ :create ]
+  resources :chats, only: [ :index, :show, :new, :create, :destroy ] do
+    resources :messages, only: [ :create, :destroy ]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

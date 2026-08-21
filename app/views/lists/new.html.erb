@@ -1,3 +1,18 @@
-<h1>Create a list</h1>
-<%= render "form", list: @list %>
-<%= link_to "Back to lists", lists_path %>
+<!-- <h1>Créer une liste</h1> -->
+<%#= render "form", list: @list %>
+<%#= button_to "ACCUEIL", root_path, method: :get, class: "btn btn-primary fw-bold" %>
+
+<div class="container min-vh-100">
+  <div class="d-flex flex-column align-items-center justify-content-center mt-3">
+  <h2 class="text-center mb-4">Créer une liste</h2>
+    <div class="list-form-content w-75">
+      <%= simple_form_for @list do |f| %>
+        <div class="d-flex align-items-center gap-3">
+          <%= f.input :name, label: "Nom de la nouvelle liste", input_html:{ class:"flex-grow-1"}, wrapper_html:{class:"mb-1 flex-grow-1"} %>
+
+          <%= f.button :submit, "Ajouter la liste", class: "btn btn-success rounded-2 text-white fw-bold mt-3 h-100" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
