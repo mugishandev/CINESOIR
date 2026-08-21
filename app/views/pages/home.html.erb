@@ -39,7 +39,8 @@
 
     <div class="col-6 text-center border border-light rounded p-3">
       <h3>Chatbot</h3>
-      <%= simple_form_for [@chat, @message] do |f| %>
+      <%#= simple_form_for [@chat, @message] do |f| %>
+      <%= simple_form_for @message, url: chats_path do |f| %>
           <label for="message" class="form-label">Voici la réponse du chatbot, passionnant n'est-il pas ?</label>
           <%= f.input :content,
           label: "Posez votre question...?" %>
