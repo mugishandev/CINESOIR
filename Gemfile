@@ -44,7 +44,7 @@ gem "image_processing", "~> 1.2"
 
 gem "devise"
 
-gem "ruby_llm", "~> 1.2.0"
+gem "ruby_llm", "~> 2.0.0"
 
 gem "simple_form"
 
